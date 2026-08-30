@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get inspired by stunning outdoor living setups — patios, gardens, balconies, poolside areas, and rooftop terraces furnished by Terrace & Co.">
+    <title>Inspiration Gallery | Terrace & Co. — Outdoor Furniture & Patio Store</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="main-nav"></div>
+
+<section class="page-header">
+    <div class="page-header-bg"><img src="assets/images/page_header_gallery.svg" alt="Inspiring outdoor furniture setups"></div>
+    <div class="page-header-overlay"></div>
+    <div class="container">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Gallery</span></div>
+        <h1>Inspiration Gallery</h1>
+        <p>Browse real outdoor spaces and curated setups to find the style that speaks to you.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="filter-bar animate-on-scroll">
+            <button class="filter-tab active" onclick="filterGallery('all', this)">All</button>
+            <button class="filter-tab" onclick="filterGallery('patio', this)">Patio</button>
+            <button class="filter-tab" onclick="filterGallery('garden', this)">Garden</button>
+            <button class="filter-tab" onclick="filterGallery('balcony', this)">Balcony</button>
+            <button class="filter-tab" onclick="filterGallery('poolside', this)">Poolside</button>
+            <button class="filter-tab" onclick="filterGallery('rooftop', this)">Rooftop</button>
+        </div>
+        <div class="masonry-grid animate-on-scroll">
+            <div class="masonry-item" data-setup="patio" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_1.svg" alt="Patio setup with dining furniture"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Mediterranean Patio</h4><p>Teak dining set with terracotta accents</p></div></div></div>
+            <div class="masonry-item" data-setup="garden" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_2.svg" alt="Garden retreat with chairs"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>English Garden Retreat</h4><p>Wrought iron bench amidst roses</p></div></div></div>
+            <div class="masonry-item" data-setup="balcony" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_3.svg" alt="Balcony design with compact furniture"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Urban Balcony</h4><p>Compact bistro set for city living</p></div></div></div>
+            <div class="masonry-item" data-setup="poolside" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_4.svg" alt="Poolside lounge area"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Poolside Paradise</h4><p>Rattan loungers with side tables</p></div></div></div>
+            <div class="masonry-item" data-setup="rooftop" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_5.svg" alt="Rooftop terrace dining"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Skyline Dining</h4><p>Aluminum dining with city views</p></div></div></div>
+            <div class="masonry-item" data-setup="patio" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_6.svg" alt="Cozy corner reading nook"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Reading Nook</h4><p>Deep-cushion armchair under pergola</p></div></div></div>
+            <div class="masonry-item" data-setup="patio" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_7.svg" alt="Modern patio with clean lines"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Modern Minimalist</h4><p>Sleek aluminum lounge set</p></div></div></div>
+            <div class="masonry-item" data-setup="garden" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_8.svg" alt="Rustic garden furniture setup"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Rustic Charm</h4><p>Reclaimed teak table with iron chairs</p></div></div></div>
+            <div class="masonry-item" data-setup="poolside" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_9.svg" alt="Tropical poolside oasis"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Tropical Oasis</h4><p>Daybed with canopy by the pool</p></div></div></div>
+            <div class="masonry-item" data-setup="patio" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_10.svg" alt="Evening glow patio with lanterns"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Evening Glow</h4><p>String lights and solar lanterns</p></div></div></div>
+            <div class="masonry-item" data-setup="rooftop" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_11.svg" alt="Minimalist deck furniture"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Zen Deck</h4><p>Low-profile seating with bamboo</p></div></div></div>
+            <div class="masonry-item" data-setup="balcony" onclick="openLightbox(this.querySelector('img').src)"><img src="assets/images/gallery_12.svg" alt="Bohemian patio with hanging chair"><div class="masonry-overlay"><div class="masonry-overlay-text"><h4>Bohemian Corner</h4><p>Macramé swing with rattan table</p></div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <img src="" alt="Gallery preview">
+</div>
+
+<button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

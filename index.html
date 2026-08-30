@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terrace & Co. — Premium outdoor furniture & patio store. Discover handcrafted garden chairs, dining sets, hammocks, sun loungers, and more for your dream outdoor living space.">
+    <title>Terrace & Co. — Outdoor Furniture & Patio Store</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="main-nav"></div>
+
+<!-- ====== HERO SLIDER ====== -->
+<section class="hero-slider" id="hero-section">
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+        <div class="hero-slide-bg"><img src="assets/images/hero_slide_1.jpg" alt="Outdoor dining setup at golden hour with teak furniture and string lights"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+            <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-4 7.5-7 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Outdoor Living Redefined</div>
+            <h1>Craft Your Perfect Outdoor Retreat</h1>
+            <p>Premium handcrafted furniture designed to transform your patio, garden, and terrace into spaces you'll never want to leave.</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                <a href="products.html" class="btn btn-primary btn-lg">Explore Collection</a>
+                <a href="gallery.html" class="btn btn-outline btn-lg" style="border-color:#fff;color:#fff;">Get Inspired</a>
+            </div>
+        </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+        <div class="hero-slide-bg"><img src="assets/images/hero_slide_2.jpg" alt="Modern luxury poolside loungers with tropical plants"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+            <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg> Resort-Style Living</div>
+            <h1>Luxury Poolside & Lounge Furniture</h1>
+            <p>Sun loungers, daybeds, and lounge sets crafted from weather-proof rattan and premium teak for the ultimate relaxation.</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                <a href="products.html" class="btn btn-primary btn-lg">Shop Loungers</a>
+                <a href="materials.html" class="btn btn-outline btn-lg" style="border-color:#fff;color:#fff;">Material Guide</a>
+            </div>
+        </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+        <div class="hero-slide-bg"><img src="assets/images/hero_slide_3.jpg" alt="Bohemian garden hammock with lanterns and cushions"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="hero-slide-content">
+            <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Cozy Outdoor Spaces</div>
+            <h1>Hammocks, Swings & Garden Bliss</h1>
+            <p>Create a personal sanctuary in your backyard with our handwoven hammocks, garden swings, and nature-inspired accessories.</p>
+            <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                <a href="products.html" class="btn btn-primary btn-lg">Browse Hammocks</a>
+                <a href="contact.html" class="btn btn-outline btn-lg" style="border-color:#fff;color:#fff;">Visit Showroom</a>
+            </div>
+        </div>
+    </div>
+    <!-- Controls -->
+    <button class="hero-arrow prev" id="hero-prev" aria-label="Previous slide"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button class="hero-arrow next" id="hero-next" aria-label="Next slide"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+    <div class="hero-controls">
+        <button class="hero-dot active" aria-label="Slide 1"></button>
+        <button class="hero-dot" aria-label="Slide 2"></button>
+        <button class="hero-dot" aria-label="Slide 3"></button>
+    </div>
+</section>
+
+<!-- ====== SEASONAL COLLECTIONS ====== -->
+<section class="section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label" style="justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-4 7.5-7 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Shop by Season</div>
+            <h2>Seasonal Collections</h2>
+            <p>Furniture curated for every season — from bright summer patios to cozy winter retreats.</p>
+        </div>
+    </div>
+    <div class="hscroll-wrap">
+        <div class="hscroll-track">
+            <div class="hscroll-card">
+                <img src="assets/images/seasonal_summer.jpg" alt="Summer outdoor furniture collection with bright wicker sofas">
+                <div class="hscroll-card-overlay"></div>
+                <div class="hscroll-card-text"><h3>Summer Vibes</h3><p>Light, airy & vibrant</p></div>
+            </div>
+            <div class="hscroll-card">
+                <img src="assets/images/seasonal_monsoon.jpg" alt="Monsoon-ready covered patio with weather-proof aluminum furniture">
+                <div class="hscroll-card-overlay"></div>
+                <div class="hscroll-card-text"><h3>Monsoon Ready</h3><p>Weather-proof & durable</p></div>
+            </div>
+            <div class="hscroll-card">
+                <img src="assets/images/seasonal_winter.jpg" alt="Winter patio setup with fire pit and warm blankets">
+                <div class="hscroll-card-overlay"></div>
+                <div class="hscroll-card-text"><h3>Winter Warmth</h3><p>Cozy fire-side comfort</p></div>
+            </div>
+            <div class="hscroll-card">
+                <img src="assets/images/seasonal_festive.jpg" alt="Festive garden dining party with fairy lights and lanterns">
+                <div class="hscroll-card-overlay"></div>
+                <div class="hscroll-card-text"><h3>Festive Gatherings</h3><p>Host in style</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== FEATURED CATEGORIES ====== -->
+<section class="section bg-surface">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label" style="justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Browse Categories</div>
+            <h2>Featured Categories</h2>
+            <p>From garden chairs to outdoor lighting — find everything you need for your outdoor space.</p>
+        </div>
+        <div class="cat-grid animate-on-scroll">
+            <a href="products.html" class="cat-card">
+                <img src="assets/images/cat_garden_chairs.jpg" alt="Wooden Adirondack garden chairs in a lush garden">
+                <div class="cat-card-overlay"></div>
+                <div class="cat-card-text"><h3>Garden Chairs</h3><p>32 Products</p></div>
+            </a>
+            <a href="products.html" class="cat-card">
+                <img src="assets/images/cat_dining_sets.jpg" alt="Outdoor teak dining set with cushioned chairs">
+                <div class="cat-card-overlay"></div>
+                <div class="cat-card-text"><h3>Outdoor Dining Sets</h3><p>28 Products</p></div>
+            </a>
+            <a href="products.html" class="cat-card">
+                <img src="assets/images/cat_hammocks.jpg" alt="Cotton rope hammock between palm trees on beach">
+                <div class="cat-card-overlay"></div>
+                <div class="cat-card-text"><h3>Hammocks</h3><p>18 Products</p></div>
+            </a>
+            <a href="products.html" class="cat-card">
+                <img src="assets/images/cat_sun_loungers.jpg" alt="Rattan sun loungers by pool">
+                <div class="cat-card-overlay"></div>
+                <div class="cat-card-text"><h3>Sun Loungers</h3><p>24 Products</p></div>
+            </a>
+            <a href="products.html" class="cat-card">
+                <img src="assets/images/cat_umbrellas.svg" alt="Cantilever patio umbrella">
+                <div class="cat-card-overlay"></div>
+                <div class="cat-card-text"><h3>Umbrellas</h3><p>15 Products</p></div>
+            </a>
+            <a href="products.html" class="cat-card">
+                <img src="assets/images/cat_planters.svg" alt="Decorative planters and pots">
+                <div class="cat-card-overlay"></div>
+                <div class="cat-card-text"><h3>Planters</h3><p>40 Products</p></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ====== WHY CHOOSE US ====== -->
+<section class="section">
+    <div class="container">
+        <div class="feature-split animate-on-scroll">
+            <div class="feature-img">
+                <img src="assets/images/feature_section.jpg" alt="Close-up of premium handcrafted teak wood furniture joint">
+            </div>
+            <div>
+                <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Why Terrace & Co.</div>
+                <h2 style="margin-bottom:0.5rem;">Crafted for the Outdoors</h2>
+                <p style="margin-bottom:1.5rem;">Every piece is built to endure sun, rain, and time — without sacrificing beauty.</p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div><h4>Weather-Proof</h4><p>UV-resistant finishes and rust-proof hardware for year-round durability.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.37 2.63L14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3z"/><path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"/><path d="M14.5 17.5L4.5 15"/></svg></div>
+                        <div><h4>Handcrafted Quality</h4><p>Artisan-made with traditional joinery and premium-grade materials.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-4 7.5-7 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+                        <div><h4>Eco-Friendly Materials</h4><p>Sustainably sourced teak, recycled aluminum, and biodegradable finishes.</p></div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div><h4>10-Year Warranty</h4><p>We stand behind every piece with a comprehensive decade-long warranty.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== BEST SELLERS ====== -->
+<section class="section bg-surface">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label" style="justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Most Popular</div>
+            <h2>Best Sellers</h2>
+            <p>Our customers' favorites — the outdoor pieces everyone loves.</p>
+        </div>
+        <div class="product-grid animate-on-scroll">
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="assets/images/product_1.svg" alt="Teak Garden Chair">
+                    <span class="product-badge">Best Seller</span>
+                </div>
+                <div class="product-card-body">
+                    <h3>Classic Teak Armchair</h3>
+                    <p class="product-material">Teak Wood • Weather-Proof</p>
+                    <div class="product-price">₹18,500 <span class="old-price">₹22,000</span></div>
+                    <a href="products.html" class="btn btn-primary btn-sm w-full">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="assets/images/product_2.svg" alt="Rattan Dining Set">
+                    <span class="product-badge">Trending</span>
+                </div>
+                <div class="product-card-body">
+                    <h3>Rattan 6-Seater Dining Set</h3>
+                    <p class="product-material">Synthetic Rattan • All-Weather</p>
+                    <div class="product-price">₹65,000 <span class="old-price">₹78,000</span></div>
+                    <a href="products.html" class="btn btn-primary btn-sm w-full">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img">
+                    <img src="assets/images/product_3.svg" alt="Cotton Hammock">
+                </div>
+                <div class="product-card-body">
+                    <h3>Macramé Cotton Hammock</h3>
+                    <p class="product-material">Organic Cotton • Handwoven</p>
+                    <div class="product-price">₹5,200</div>
+                    <a href="products.html" class="btn btn-primary btn-sm w-full">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== STATS BANNER ====== -->
+<section class="stats-banner animate-on-scroll">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value" data-count="15000" data-suffix="+">0</div>
+                <div class="stat-label">Products Sold</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" data-count="8000" data-suffix="+">0</div>
+                <div class="stat-label">Happy Customers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" data-count="50" data-suffix="+">0</div>
+                <div class="stat-label">Material Options</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" data-count="12" data-suffix="+">0</div>
+                <div class="stat-label">Years of Craft</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== CUSTOMER REVIEWS ====== -->
+<section class="section">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label" style="justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> What Customers Say</div>
+            <h2>Loved by Thousands</h2>
+            <p>Real stories from homeowners who transformed their outdoor spaces with us.</p>
+        </div>
+        <div class="testimonial-list animate-on-scroll">
+            <div class="testimonial-card">
+                <div class="testimonial-avatar"><img src="assets/images/testimonial_1.svg" alt="Ananya Sharma"></div>
+                <div class="testimonial-body">
+                    <div class="testimonial-stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                    <blockquote>"Our teak dining set has survived three monsoons and still looks gorgeous. The craftsmanship is second to none — guests always ask where we got it!"</blockquote>
+                    <div class="testimonial-name">Ananya Sharma</div>
+                    <div class="testimonial-role">Homeowner, Bengaluru</div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar"><img src="assets/images/testimonial_2.svg" alt="Rajesh Patel"></div>
+                <div class="testimonial-body">
+                    <div class="testimonial-stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                    <blockquote>"We furnished our entire resort pool deck with Terrace & Co. The rattan loungers are incredibly comfortable and have held up beautifully. Highly recommend for hospitality projects."</blockquote>
+                    <div class="testimonial-name">Rajesh Patel</div>
+                    <div class="testimonial-role">Resort Owner, Goa</div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-avatar"><img src="assets/images/testimonial_3.svg" alt="Meera Iyer"></div>
+                <div class="testimonial-body">
+                    <div class="testimonial-stars"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B6914" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                    <blockquote>"The customization service was incredible. They designed a wrought iron bench that fits perfectly in our courtyard. The team was professional and delivery was prompt."</blockquote>
+                    <div class="testimonial-name">Meera Iyer</div>
+                    <div class="testimonial-role">Interior Designer, Chennai</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== STYLE YOUR SPACE — BEFORE/AFTER ====== -->
+<section class="section bg-surface">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label" style="justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="3" x2="12" y2="21"/></svg> Transformations</div>
+            <h2>Style Your Space</h2>
+            <p>See how our furniture transforms ordinary outdoor areas into stunning retreats.</p>
+        </div>
+        <div class="ba-slider animate-on-scroll">
+            <img src="assets/images/before_space.svg" alt="Before — Empty patio space" class="ba-before">
+            <img src="assets/images/after_space.svg" alt="After — Furnished patio with Terrace & Co. furniture" class="ba-after">
+            <div class="ba-handle"></div>
+        </div>
+        <p class="text-center text-muted" style="margin-top:1rem;font-size:0.875rem;">← Drag the slider to compare →</p>
+    </div>
+</section>
+
+<!-- ====== NEWSLETTER CTA ====== -->
+<section class="section">
+    <div class="container">
+        <div class="cta-banner animate-on-scroll">
+            <h2>Get Outdoor Design Tips & Exclusive Offers</h2>
+            <p>Subscribe to our newsletter for seasonal style guides, new arrival alerts, and members-only discounts.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();">
+                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-secondary btn-lg">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="section bg-surface">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <div class="section-label" style="justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Got Questions?</div>
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about our products, delivery, and services.</p>
+        </div>
+        <div class="faq-list animate-on-scroll">
+            <div class="faq-item active">
+                <button class="faq-question" onclick="toggleFAQ(this)">What materials are best for outdoor furniture?<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                <div class="faq-answer"><p>Teak, aluminum, synthetic rattan, and wrought iron are our most popular choices. Teak offers natural weather resistance, aluminum is lightweight and rust-proof, rattan provides a resort-style aesthetic, and wrought iron adds classic elegance. Visit our Materials Guide for detailed comparisons.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">Do you offer free delivery?<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                <div class="faq-answer"><p>Yes! We offer free delivery within city limits for orders above ₹15,000. For bulk and custom orders, delivery and installation are complimentary regardless of order value. Standard delivery takes 5–7 business days.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">Can I customize furniture dimensions and colors?<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                <div class="faq-answer"><p>Absolutely! We offer full customization for most products — including dimensions, material choice, cushion fabric, and finish color. Visit our Bulk & Customization Orders page or contact us for a design consultation.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">How do I maintain outdoor furniture?<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                <div class="faq-answer"><p>Maintenance depends on the material. Teak requires seasonal oiling, aluminum needs occasional soap-water cleaning, rattan should be kept dry and wiped clean, and wrought iron benefits from annual touch-up paint. Detailed care guides are included with every purchase.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">What does the 10-year warranty cover?<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                <div class="faq-answer"><p>Our warranty covers structural defects, frame damage, and material degradation under normal outdoor use. It does not cover cushion fabric wear, scratches from physical impact, or damage from extreme misuse. Full terms are available at checkout.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Scroll to Top -->
+<button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+
+<div id="main-footer"></div>
+
+<script src="components.js"></script>
+</body>
+</html>

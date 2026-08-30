@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Something exciting is coming soon at Terrace & Co. Sign up to be the first to know about our latest outdoor furniture collections.">
+    <title>Coming Soon | Terrace & Co.</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .coming-soon-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 50%, var(--bg) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .coming-soon-page::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: var(--primary);
+            opacity: 0.03;
+            top: -100px;
+            right: -100px;
+        }
+        .coming-soon-page::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--secondary);
+            opacity: 0.04;
+            bottom: -80px;
+            left: -80px;
+        }
+        .cs-content {
+            max-width: 580px;
+            z-index: 2;
+        }
+        .cs-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+            text-decoration: none;
+        }
+        .cs-badge {
+            display: inline-block;
+            padding: 0.375rem 1rem;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        .cs-content h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        .cs-content p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.0625rem;
+            line-height: 1.7;
+        }
+        .cs-timer {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .cs-timer-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1rem 1.25rem;
+            min-width: 80px;
+        }
+        .cs-timer-value {
+            font-family: var(--ff-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+        .cs-timer-label {
+            font-size: 0.6875rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-top: 0.25rem;
+        }
+        .cs-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 420px;
+            margin: 0 auto 1.5rem;
+        }
+        .cs-form input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 0.875rem;
+        }
+        .cs-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .cs-back {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        .cs-back a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .cs-toggles {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        @media (max-width: 480px) {
+            .cs-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="coming-soon-page">
+    <div class="cs-toggles">
+        <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction"><span class="dir-label" style="font-size:0.625rem;">LTR</span></button>
+        <button onclick="toggleTheme()" class="nav-icon-btn" title="Toggle Theme"><span class="theme-icon-wrap"></span></button>
+    </div>
+    <div class="cs-content">
+        <a href="index.html" class="cs-logo" aria-label="Terrace & Co. Home">
+            <img src="logo.svg" alt="Terrace & Co. Logo" width="44" height="44" style="object-fit:contain;">
+            <div class="nav-logo-text"><span class="brand-top">TERRACE</span><span class="brand-bottom">& Co.</span></div>
+        </a>
+        <div class="cs-badge">Coming Soon</div>
+        <h1>Something Beautiful is Brewing</h1>
+        <p>We're crafting something exciting for outdoor living enthusiasts. Be the first to know when we launch our new collection.</p>
+
+        <div class="cs-timer" id="cs-timer">
+            <div class="cs-timer-item"><div class="cs-timer-value" id="cs-days">30</div><div class="cs-timer-label">Days</div></div>
+            <div class="cs-timer-item"><div class="cs-timer-value" id="cs-hours">12</div><div class="cs-timer-label">Hours</div></div>
+            <div class="cs-timer-item"><div class="cs-timer-value" id="cs-mins">45</div><div class="cs-timer-label">Minutes</div></div>
+            <div class="cs-timer-item"><div class="cs-timer-value" id="cs-secs">00</div><div class="cs-timer-label">Seconds</div></div>
+        </div>
+
+        <form class="cs-form" onsubmit="event.preventDefault(); alert('You\'re on the list! We\'ll notify you when we launch.'); this.reset();">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary">Notify Me</button>
+        </form>
+
+        <div class="cs-back"><a href="index.html">← Back to Home</a></div>
+    </div>
+</div>
+
+<script src="components.js"></script>
+<script>
+initAuthPage();
+// Countdown timer (30 days from now)
+const launchDate = new Date();
+launchDate.setDate(launchDate.getDate() + 30);
+
+function updateTimer() {
+    const now = new Date();
+    const diff = launchDate - now;
+    if (diff <= 0) return;
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('cs-days').textContent = String(d).padStart(2, '0');
+    document.getElementById('cs-hours').textContent = String(h).padStart(2, '0');
+    document.getElementById('cs-mins').textContent = String(m).padStart(2, '0');
+    document.getElementById('cs-secs').textContent = String(s).padStart(2, '0');
+}
+updateTimer();
+setInterval(updateTimer, 1000);
+</script>
+</body>
+</html>
