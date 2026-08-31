@@ -418,7 +418,7 @@ function initBASlider() {
         const rect = slider.getBoundingClientRect();
         let percent = ((x - rect.left) / rect.width) * 100;
         percent = Math.max(5, Math.min(95, percent));
-        afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+        afterImg.style.clipPath = `inset(0 0 0 ${percent}%)`;
         handle.style.left = percent + '%';
     }
 
