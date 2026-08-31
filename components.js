@@ -127,22 +127,20 @@ function injectNav() {
                 </button>
                 <!-- CTAs -->
                 <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
-                <a href="products.html" class="btn btn-primary btn-sm">Shop Now</a>
                 <!-- Mobile Hamburger -->
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu(event)" aria-label="Open menu">
                     <span class="mobile-menu-icon">${ICONS.menu}</span>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Backdrop -->
-        <div class="mobile-backdrop" id="mobile-backdrop" onclick="toggleMobileMenu()"></div>
+        <div class="mobile-backdrop" id="mobile-backdrop" onclick="toggleMobileMenu(event)"></div>
 
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobile-menu">
             ${mobileLinksHTML}
             <div class="mob-actions">
-                <a href="products.html" class="btn btn-primary w-full">Shop Now</a>
                 <a href="login.html" class="btn btn-secondary w-full">Login</a>
             </div>
             <div class="mob-toggles">
@@ -158,7 +156,10 @@ function injectNav() {
     <div class="navbar-spacer"></div>`;
 }
 
-function toggleMobileMenu() {
+function toggleMobileMenu(e) {
+    if (e && e.stopPropagation) {
+        e.stopPropagation();
+    }
     const menu = document.getElementById('mobile-menu');
     const backdrop = document.getElementById('mobile-backdrop');
     const iconEl = document.querySelector('.mobile-menu-icon');
@@ -181,12 +182,15 @@ document.addEventListener('click', function(e) {
     const menu = document.getElementById('mobile-menu');
     const backdrop = document.getElementById('mobile-backdrop');
     const btn = document.querySelector('.mobile-menu-btn');
-    if (menu && menu.classList.contains('open') && !menu.contains(e.target) && btn && !btn.contains(e.target)) {
-        menu.classList.remove('open');
-        if (backdrop) backdrop.classList.remove('open');
-        const iconEl = document.querySelector('.mobile-menu-icon');
-        if (iconEl) iconEl.innerHTML = ICONS.menu;
-    }
+    if (!menu || !menu.classList.contains('open')) return;
+
+    if (btn && (btn === e.target || btn.contains(e.target))) return;
+    if (menu.contains(e.target)) return;
+
+    menu.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+    const iconEl = document.querySelector('.mobile-menu-icon');
+    if (iconEl) iconEl.innerHTML = ICONS.menu;
 });
 
 /* ─── FOOTER ─────────────────────────────────────────── */
@@ -197,7 +201,7 @@ function injectFooter() {
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Column 1: Brand -->
+                <!-- Column 1: Brand & Socials -->
                 <div class="footer-brand">
                     <a href="index.html" class="nav-logo" style="margin-bottom:0.5rem;" aria-label="Terrace & Co. Home">
                         ${getLogoSVG(40)}
@@ -216,7 +220,7 @@ function injectFooter() {
                 </div>
 
                 <!-- Column 2: Quick Links -->
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-col-title">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
@@ -230,7 +234,7 @@ function injectFooter() {
                 </div>
 
                 <!-- Column 3: Resources -->
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-col-title">Resources</h4>
                     <ul class="footer-links">
                         <li><a href="coming-soon.html">Blog & Tips</a></li>
@@ -243,10 +247,10 @@ function injectFooter() {
                 </div>
 
                 <!-- Column 4: Newsletter -->
-                <div>
-                    <div class="footer-newsletter">
-                        <h4>Stay Inspired</h4>
-                        <p>Get design tips, new arrivals & exclusive outdoor living guides.</p>
+                <div class="footer-col">
+                    <div class="footer-newsletter-card">
+                        <h4 class="footer-newsletter-title">Stay Inspired</h4>
+                        <p class="footer-newsletter-desc">Get design tips, new arrivals &amp; exclusive outdoor living guides.</p>
                         <form onsubmit="event.preventDefault(); alert('Subscribed successfully!'); this.reset();" class="footer-newsletter-form">
                             <input type="email" placeholder="your@email.com" class="footer-newsletter-input" required>
                             <button type="submit" class="footer-newsletter-btn">Subscribe</button>
@@ -257,11 +261,11 @@ function injectFooter() {
 
             <!-- Bottom Bar -->
             <div class="footer-bottom">
-                <p>&copy; ${new Date().getFullYear()} TERRACE & CO. All rights reserved.</p>
+                <p class="footer-copyright">&copy; ${new Date().getFullYear()} TERRACE & CO. All rights reserved. Premium Outdoor Living.</p>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy</a>
-                    <a href="#">Terms</a>
-                    <a href="#">Cookies</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Shipping &amp; Returns</a>
                 </div>
             </div>
         </div>

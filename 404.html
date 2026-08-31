@@ -3,107 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Page not found — The page you're looking for doesn't exist. Return to Terrace & Co. homepage.">
-    <title>404 — Page Not Found | Terrace & Co.</title>
+    <meta name="description" content="Page not found. The page you're looking for doesn't exist or has been moved.">
+    <title>404 — Page Not Found | Terrace & Co. — Luxury Outdoor Furniture</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <style>
-        .error-page {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            padding: 2rem;
-            background: var(--bg);
+        .error-illustration {
             position: relative;
-            overflow: hidden;
+            display: inline-block;
+            margin-bottom: 2rem;
         }
-        .error-page::before {
-            content: '404';
+        .error-illustration .patio-spin {
             position: absolute;
-            font-size: clamp(12rem, 30vw, 28rem);
-            font-weight: 600;
-            font-family: var(--ff-heading);
-            color: var(--primary);
-            opacity: 0.04;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            line-height: 1;
-            pointer-events: none;
+            width: 140px;
+            height: 140px;
+            opacity: 0.12;
+            animation: spin 16s linear infinite;
         }
-        .error-content {
-            max-width: 540px;
-            z-index: 2;
-        }
-        .error-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: var(--surface);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            border: 3px solid var(--border);
-        }
-        .error-icon svg {
-            width: 48px;
-            height: 48px;
-            color: var(--primary);
-        }
-        .error-content h1 {
-            font-size: 2.5rem;
+        .error-subtitle {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--text-heading);
             margin-bottom: 0.75rem;
-            color: var(--text);
         }
-        .error-content p {
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-size: 1.0625rem;
-        }
-        .error-links {
-            display: flex;
-            gap: 0.75rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .error-toggles {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            display: flex;
-            gap: 0.5rem;
+        .error-desc {
+            color: var(--text-body);
+            font-size: 1.05rem;
+            max-width: 440px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.65;
         }
     </style>
 </head>
-<body>
-<div class="error-page">
-    <div class="error-toggles">
-        <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction"><span class="dir-label" style="font-size:0.625rem;">LTR</span></button>
-        <button onclick="toggleTheme()" class="nav-icon-btn" title="Toggle Theme"><span class="theme-icon-wrap"></span></button>
-    </div>
-    <div class="error-content">
-        <div class="error-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M16 16s-1.5-2-4-2-4 2-4 2"/>
-                <line x1="9" y1="9" x2="9.01" y2="9"/>
-                <line x1="15" y1="9" x2="15.01" y2="9"/>
-            </svg>
+<body class="fullscreen-page">
+
+<!-- Top Bar -->
+<div style="display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;max-width:1200px;margin:0 auto;width:100%;">
+    <a href="index.html" class="nav-logo" aria-label="Terrace & Co. Home">
+        <img src="logo.svg" alt="Terrace & Co. Logo" width="38" height="38" style="width:38px;height:38px;object-fit:contain;display:block;" />
+        <div class="nav-logo-text">
+            <span class="brand-top">TERRACE</span>
+            <span class="brand-bottom">& Co.</span>
         </div>
-        <h1>Oops! Page Not Found</h1>
-        <p>The outdoor space you're looking for seems to have moved. Let's get you back on track.</p>
-        <div class="error-links">
-            <a href="index.html" class="btn btn-primary btn-lg">Back to Home</a>
-            <a href="products.html" class="btn btn-outline btn-lg">Browse Products</a>
+    </a>
+    <div style="display:flex;gap:0.5rem;">
+        <button onclick="toggleDir()" class="auth-toggle-btn" title="Toggle Direction">
+            <span class="dir-label" style="font-size:0.625rem;font-weight:600;">LTR</span>
+        </button>
+        <button onclick="toggleTheme()" class="auth-toggle-btn" title="Toggle Theme" aria-label="Toggle dark mode">
+            <span class="theme-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        </button>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="fullscreen-content">
+    <div style="position:relative;max-width:540px;width:100%;margin:0 auto;">
+        <div class="error-illustration">
+            <!-- Spinning compass / patio sunburst icon behind -->
+            <svg class="patio-spin" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="50" stroke="#8B6914" stroke-width="2" stroke-dasharray="8 6" />
+                <circle cx="60" cy="60" r="36" stroke="#8B6914" stroke-width="1.5" />
+                <path d="M60 10 L60 110 M10 60 L110 60" stroke="#8B6914" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <div class="error-code">404</div>
+        </div>
+        <div class="error-subtitle">Outdoor Space Not Found</div>
+        <p class="error-desc">Looks like this piece of patio has been moved or doesn't exist. Let's get you back to our curated collections.</p>
+        <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
+            <a href="index.html" class="btn btn-primary btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Back to Home</a>
+            <a href="products.html" class="btn btn-secondary btn-lg">Browse Products</a>
         </div>
     </div>
 </div>
 
 <script src="components.js"></script>
-<script>initAuthPage();</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initAuthPage();
+    });
+</script>
 </body>
 </html>
