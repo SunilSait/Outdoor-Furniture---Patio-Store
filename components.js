@@ -215,7 +215,6 @@ function injectFooter() {
                         <a href="#" class="footer-social-link" aria-label="Facebook">${ICONS.facebook}</a>
                         <a href="#" class="footer-social-link" aria-label="Instagram">${ICONS.instagram}</a>
                         <a href="#" class="footer-social-link" aria-label="YouTube">${ICONS.youtube}</a>
-                        <a href="#" class="footer-social-link" aria-label="Pinterest">${ICONS.pinterest}</a>
                     </div>
                 </div>
 

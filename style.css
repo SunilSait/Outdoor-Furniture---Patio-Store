@@ -398,17 +398,18 @@ strong, b {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.35rem;
 }
 
 .nav-link {
     font-family: var(--font-heading);
-    font-size: 0.8125rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-body);
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.85rem;
     border-radius: var(--radius-md);
     transition: var(--transition-fast);
+    letter-spacing: 0.01em;
 }
 
 .nav-link:hover {
@@ -527,7 +528,7 @@ strong, b {
 .mob-link {
     display: block;
     padding: 0.75rem 1rem;
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-body);
     border-radius: var(--radius-md);
@@ -2488,6 +2489,7 @@ select.form-input {
 /* ===== COMPARISON TABLE ===== */
 .table-responsive {
     width: 100%;
+    max-width: 100%;
     overflow: hidden;
     border-radius: var(--radius-xl);
     border: 1px solid var(--border-default);
@@ -2501,6 +2503,7 @@ select.form-input {
     table-layout: fixed !important;
     border-collapse: collapse;
     margin: 0;
+    font-size: 0.8125rem;
 }
 
 .comparison-table thead th {
@@ -2508,12 +2511,8 @@ select.form-input {
     color: #fff;
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 0.8125rem;
-    padding: 0.75rem 0.5rem;
+    padding: 0.65rem 0.5rem;
     text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .comparison-table thead th:first-child {
@@ -2527,14 +2526,10 @@ select.form-input {
 }
 
 .comparison-table tbody td {
-    padding: 0.625rem 0.5rem;
-    font-size: 0.8125rem;
+    padding: 0.5rem 0.5rem;
     border-bottom: 1px solid var(--border-default);
     color: var(--text-body);
     text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .comparison-table tbody td:first-child {
@@ -2558,34 +2553,34 @@ select.form-input {
 }
 
 @media (max-width: 768px) {
-    .desktop-only {
-        display: none !important;
-    }
     .table-responsive {
         width: 100% !important;
+        max-width: 100% !important;
         overflow: hidden !important;
         border-radius: var(--radius-lg);
     }
     .comparison-table {
         width: 100% !important;
+        max-width: 100% !important;
         table-layout: fixed !important;
+        font-size: 0.65rem;
     }
     .comparison-table thead th {
         padding: 0.45rem 0.15rem !important;
         font-size: 0.65rem !important;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.01em;
     }
     .comparison-table thead th:first-child {
         padding-left: 0.35rem !important;
     }
     .comparison-table tbody td {
-        padding: 0.4rem 0.12rem !important;
+        padding: 0.4rem 0.1rem !important;
         font-size: 0.6rem !important;
-        line-height: 1.2;
+        line-height: 1.25;
     }
     .comparison-table tbody td:first-child {
-        font-size: 0.6rem !important;
         padding-left: 0.35rem !important;
+        font-size: 0.6rem !important;
     }
     [dir="rtl"] .comparison-table thead th:first-child,
     [dir="rtl"] .comparison-table tbody td:first-child {
@@ -2593,7 +2588,7 @@ select.form-input {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 400px) {
     .comparison-table thead th {
         padding: 0.4rem 0.08rem !important;
         font-size: 0.58rem !important;
@@ -3042,43 +3037,19 @@ select.form-input {
 /* ===== ACCENT CTA CARD (Imageless Swatch Kit CTA) ===== */
 .accent-cta-card {
     position: relative;
-    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-surface) 100%);
-    border: 1.5px solid var(--border-default);
+    background: var(--bg-card);
+    border: 1px solid var(--border-default);
     border-radius: var(--radius-3xl);
     padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3.5rem);
     text-align: center;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-card);
     transition: var(--transition-smooth);
-}
-
-.accent-cta-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -20%;
-    width: 80%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(139, 105, 20, 0.12) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.accent-cta-card::after {
-    content: '';
-    position: absolute;
-    bottom: -40%;
-    right: -20%;
-    width: 70%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(45, 59, 45, 0.18) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
 }
 
 .accent-cta-card:hover {
     border-color: rgba(139, 105, 20, 0.4);
-    box-shadow: var(--shadow-xl), 0 0 30px rgba(139, 105, 20, 0.08);
+    box-shadow: var(--shadow-card-hover);
 }
 
 .accent-cta-inner {
@@ -3122,7 +3093,7 @@ select.form-input {
     display: flex;
     align-items: flex-start;
     gap: 0.875rem;
-    background: var(--bg-body);
+    background: var(--bg-surface);
     padding: 1.15rem 1.25rem;
     border-radius: var(--radius-xl);
     border: 1px solid var(--border-default);
@@ -3138,6 +3109,9 @@ select.form-input {
     width: 2.5rem;
     height: 2.5rem;
     flex-shrink: 0;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: var(--radius-lg);
 }
 
 .accent-cta-feature h4 {
@@ -3178,14 +3152,30 @@ select.form-input {
     gap: 0.35rem;
 }
 
+.accent-cta-trust span svg {
+    color: var(--primary);
+}
+
 [dir="rtl"] .accent-cta-grid {
     text-align: right;
 }
 
 @media (max-width: 768px) {
+    .accent-cta-card {
+        padding: 2.5rem 1.25rem;
+        border-radius: var(--radius-2xl);
+    }
     .accent-cta-grid {
         grid-template-columns: 1fr;
         gap: 0.75rem;
+    }
+    .accent-cta-actions .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+    .accent-cta-trust {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
