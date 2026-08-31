@@ -65,9 +65,24 @@ function toggleDir() {
     });
 }
 
-/* ─── SVG LOGO ─────────────────────────────────────────── */
 function getLogoSVG(size = 38) {
-    return `<img src="logo.svg" alt="Terrace & Co. Logo" width="${size}" height="${size}" class="nav-logo-img" style="width:${size}px;height:${size}px;object-fit:contain;display:block;flex-shrink:0;" />`;
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="${size}" height="${size}" class="nav-logo-img" style="width:${size}px;height:${size}px;display:block;flex-shrink:0;" aria-hidden="true">
+      <!-- Bench seat -->
+      <rect class="logo-seat" x="8" y="26" width="32" height="3" rx="1.5" fill="#8B6914"/>
+      <!-- Bench legs -->
+      <rect class="logo-accent-slat" x="12" y="29" width="2.5" height="8" rx="1" fill="#4E6E4E"/>
+      <rect class="logo-accent-slat" x="33.5" y="29" width="2.5" height="8" rx="1" fill="#4E6E4E"/>
+      <!-- Bench back slats -->
+      <rect class="logo-accent-slat" x="13" y="16" width="2" height="10" rx="1" fill="#4E6E4E"/>
+      <rect class="logo-accent-slat" x="19" y="14" width="2" height="12" rx="1" fill="#4E6E4E"/>
+      <rect class="logo-accent-slat" x="25" y="14" width="2" height="12" rx="1" fill="#4E6E4E"/>
+      <rect class="logo-accent-slat" x="31" y="16" width="2" height="10" rx="1" fill="#4E6E4E"/>
+      <!-- Bench back top rail -->
+      <rect class="logo-rail" x="11" y="14" width="24" height="2.5" rx="1.25" fill="#8B6914"/>
+      <!-- Leaf accent -->
+      <path class="logo-accent-leaf" d="M38 6C38 6 42 10 40 16C38 22 34 20 34 20C34 20 30 16 32 10C34 4 38 6 38 6Z" fill="#528E52" opacity="0.95"/>
+      <path class="logo-leaf-vein" d="M37 8C37 14 35 18 34 20" stroke="#8B6914" stroke-width="1" stroke-linecap="round" opacity="0.85"/>
+    </svg>`;
 }
 
 /* ─── NAVBAR ─────────────────────────────────────────── */

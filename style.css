@@ -369,6 +369,43 @@ strong, b {
     transition: var(--transition-fast);
 }
 
+.logo-accent-slat {
+    fill: #4E6E4E;
+    transition: fill var(--transition-fast);
+}
+
+.logo-accent-leaf {
+    fill: #528E52;
+    transition: fill var(--transition-fast);
+}
+
+.dark .nav-logo .logo-accent-slat,
+.dark .auth-logo .logo-accent-slat {
+    fill: #82A77A;
+}
+
+.dark .nav-logo .logo-accent-leaf,
+.dark .auth-logo .logo-accent-leaf {
+    fill: #6AA86A;
+}
+
+.footer .nav-logo .logo-accent-slat {
+    fill: #A8C4A0;
+}
+
+.footer .nav-logo .logo-accent-leaf {
+    fill: #72B272;
+}
+
+.footer .nav-logo .logo-seat,
+.footer .nav-logo .logo-rail {
+    fill: #C5A85C;
+}
+
+.footer .nav-logo .logo-leaf-vein {
+    stroke: #C5A85C;
+}
+
 .nav-logo:hover .nav-logo-img {
     transform: scale(1.05);
 }
@@ -4108,7 +4145,7 @@ select.form-input {
 .map-floating-card {
     position: absolute;
     top: 1.5rem;
-    left: 1.5rem;
+    right: 1.5rem;
     z-index: 2;
     background: var(--bg-card);
     border: 1px solid var(--border-default);
@@ -4120,7 +4157,7 @@ select.form-input {
     transition: var(--transition-smooth);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .map-container iframe {
         height: 350px;
     }
