@@ -141,7 +141,7 @@ function injectNav() {
                     <span class="theme-icon-wrap">${isDark ? ICONS.sun : ICONS.moon}</span>
                 </button>
                 <!-- CTAs -->
-                <a href="login.html" class="btn btn-secondary btn-sm">Login</a>
+                <a href="login.html" class="btn btn-primary btn-sm">Login</a>
                 <!-- Mobile Hamburger -->
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu(event)" aria-label="Open menu">
                     <span class="mobile-menu-icon">${ICONS.menu}</span>
@@ -156,7 +156,7 @@ function injectNav() {
         <div class="mobile-menu" id="mobile-menu">
             ${mobileLinksHTML}
             <div class="mob-actions">
-                <a href="login.html" class="btn btn-secondary w-full">Login</a>
+                <a href="login.html" class="btn btn-primary w-full">Login</a>
             </div>
             <div class="mob-toggles">
                 <button onclick="toggleDir()" class="nav-icon-btn" title="Toggle Direction">
