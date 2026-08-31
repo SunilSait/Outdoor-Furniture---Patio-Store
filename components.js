@@ -476,6 +476,58 @@ function initHeroSlider() {
     startTimer();
 }
 
+/* ─── HERO SPLIT SLIDER (Home 2) ────────────────────────── */
+function initHeroSplitSlider() {
+    const wrap = document.querySelector('.hero-split-img-wrap');
+    if (!wrap) return;
+
+    const slider = wrap.querySelector('.hero-split-slider');
+    const slides = wrap.querySelectorAll('.hero-split-slide');
+    const dots = wrap.querySelectorAll('.hero-split-dot');
+    if (!slides.length) return;
+
+    let current = 0;
+    let timer = null;
+    const interval = 4500;
+
+    function goToSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        current = index;
+        slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
+    }
+
+    function next() { goToSlide(current + 1); }
+    function prev() { goToSlide(current - 1); }
+    function startTimer() { stopTimer(); timer = setInterval(next, interval); }
+    function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            goToSlide(idx);
+            startTimer();
+        });
+    });
+
+    if (slider) {
+        slider.addEventListener('mouseenter', stopTimer);
+        slider.addEventListener('mouseleave', startTimer);
+
+        let touchStartX = 0;
+        slider.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        slider.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 40) { next(); startTimer(); }
+            else if (touchEndX - touchStartX > 40) { prev(); startTimer(); }
+        }, { passive: true });
+    }
+
+    startTimer();
+}
+
 /* ─── SCROLL TO TOP ──────────────────────────────────────── */
 function initScrollToTop() {
     const btn = document.getElementById('scroll-top-btn');
@@ -513,6 +565,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     animateCounters();
     initHeroSlider();
+    initHeroSplitSlider();
     initBASlider();
     initScrollToTop();
 });

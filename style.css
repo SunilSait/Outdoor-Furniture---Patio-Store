@@ -123,14 +123,18 @@ p {
     color: var(--text-body);
 }
 
+strong, b {
+    font-weight: 600;
+}
+
 .text-muted { color: var(--text-muted); }
 
 /* --- Layout --- */
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1260px;
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 0 clamp(1.25rem, 4vw, 3rem);
 }
 
 .section {
@@ -347,9 +351,9 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1320px;
+    max-width: 1260px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 clamp(1.25rem, 4vw, 3rem);
     height: 72px;
     gap: 1rem;
 }
@@ -377,7 +381,7 @@ p {
 
 .brand-top {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
     color: var(--text-heading);
     letter-spacing: 0.08em;
@@ -944,98 +948,171 @@ p {
 }
 
 /* ===== SPLIT HERO (Home 2) ===== */
-.hero-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 85vh;
-    align-items: center;
+.hero-split-section {
+    padding: clamp(2rem, 4.5vw, 3.5rem) 0 clamp(2.5rem, 5vw, 4rem);
     overflow: hidden;
 }
 
+.hero-split {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+}
+
 .hero-split-text {
-    padding: 4rem 3rem 4rem 2rem;
-    max-width: 600px;
-    margin-left: auto;
+    padding: 1rem 0;
+    max-width: 580px;
 }
 
 .hero-split-text h1 {
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+    line-height: 1.15;
     margin-bottom: 1.25rem;
 }
 
 .hero-split-text p {
     font-size: 1.05rem;
-    margin-bottom: 2rem;
+    line-height: 1.7;
+    margin-bottom: 2.25rem;
     color: var(--text-body);
 }
 
-.hero-split-img {
+.hero-split-img-wrap {
     position: relative;
-    height: 100%;
-    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.hero-split-img img {
+.hero-split-slider {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 440px;
+    border-radius: var(--radius-3xl);
+    overflow: hidden;
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.hero-split-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-split-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.04);
+}
+
+.hero-split-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.hero-split-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+.hero-split-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.95rem;
+    background: rgba(22, 26, 23, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-split-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition-fast);
+}
+
+.hero-split-dot:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.hero-split-dot.active {
+    background: var(--primary);
+    width: 22px;
+    border-radius: 4px;
 }
 
 .hero-split-badge {
     position: absolute;
-    bottom: 2rem;
-    left: -2rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border-default);
+    bottom: 1.25rem;
+    left: 1.25rem;
+    background: rgba(22, 26, 23, 0.88);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-xl);
-    padding: 1rem 1.5rem;
-    box-shadow: var(--shadow-lg);
+    padding: 0.75rem 1.15rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    z-index: 3;
 }
 
 [dir="rtl"] .hero-split-badge {
     left: auto;
-    right: -2rem;
+    right: 1.25rem;
 }
 
 .hero-split-badge .badge-number {
     font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 600;
+    font-size: 1.35rem;
     color: var(--primary);
 }
 
 .hero-split-badge .badge-label {
-    font-size: 0.8125rem;
-    color: var(--text-muted);
+    font-size: 0.75rem;
+    color: #fff;
     line-height: 1.3;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .hero-split {
         grid-template-columns: 1fr;
-        min-height: auto;
+        gap: 2.5rem;
     }
     .hero-split-text {
-        padding: 3rem 1.5rem 2rem;
-        margin-left: 0;
-        text-align: center;
         max-width: 100%;
+        text-align: center;
+        padding: 0;
     }
-    .hero-split-img {
-        min-height: 350px;
+    .hero-split-text .section-label {
+        justify-content: center;
     }
-    .hero-split-badge {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 1.5rem;
+    .hero-split-text > div:last-child {
+        justify-content: center;
     }
-    [dir="rtl"] .hero-split-badge {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
+    .hero-split-slider {
+        max-width: 100%;
+        height: 360px;
     }
 }
 
@@ -1268,7 +1345,7 @@ p {
 
 .stat-item .stat-value {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 600;
     font-size: clamp(1.75rem, 4vw, 2.75rem);
     color: var(--primary);
     line-height: 1.1;
@@ -1519,10 +1596,10 @@ p {
 /* ===== CTA BANNER ===== */
 .cta-banner {
     background: linear-gradient(135deg, var(--primary) 0%, #A07B1A 50%, var(--secondary) 100%);
-    padding: 4rem 2rem;
+    padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3.5rem);
     border-radius: var(--radius-3xl);
     text-align: center;
-    margin: 0 1.25rem;
+    margin: 0;
 }
 
 .cta-banner h2 {
@@ -1897,7 +1974,7 @@ select.form-input {
 
 .error-code {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 600;
     font-size: clamp(6rem, 15vw, 10rem);
     color: var(--primary);
     line-height: 1;
@@ -2012,7 +2089,7 @@ select.form-input {
     justify-content: center;
     font-family: var(--font-heading);
     font-size: 0.625rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #fff;
     z-index: 2;
     transform: translateX(1px);
@@ -2042,21 +2119,26 @@ select.form-input {
 
 /* ===== MASONRY GALLERY ===== */
 .masonry-grid {
-    columns: 3 280px;
-    column-gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
 }
 
 .masonry-item {
-    break-inside: avoid;
-    margin-bottom: 1.25rem;
+    aspect-ratio: 4 / 3;
     border-radius: var(--radius-xl);
     overflow: hidden;
     position: relative;
     cursor: pointer;
+    margin-bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .masonry-item img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.6s ease;
 }
@@ -2095,15 +2177,17 @@ select.form-input {
     font-size: 0.8125rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .masonry-grid {
-        columns: 2 200px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .masonry-grid {
-        columns: 1;
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 }
 
@@ -2275,7 +2359,7 @@ select.form-input {
     background: var(--primary);
     color: #fff;
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.125rem;
     margin-bottom: 1rem;
 }
@@ -2349,28 +2433,35 @@ select.form-input {
 .overlap-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
-    min-height: 500px;
-    align-items: stretch;
+    gap: 3.5rem;
+    align-items: center;
 }
 
 .overlap-img {
     position: relative;
+    border-radius: var(--radius-2xl);
     overflow: hidden;
+    height: 420px;
+    box-shadow: var(--shadow-card);
 }
 
 .overlap-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.overlap-img:hover img {
+    transform: scale(1.03);
 }
 
 .overlap-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 3rem;
-    background: var(--bg-surface);
+    padding: 0;
+    background: transparent;
 }
 
 .overlap-text h2 {
@@ -2379,6 +2470,8 @@ select.form-input {
 
 .overlap-text p {
     margin-bottom: 1.5rem;
+    color: var(--text-body);
+    line-height: 1.7;
 }
 
 .eco-stats {
@@ -2390,15 +2483,21 @@ select.form-input {
 
 .eco-stat {
     text-align: center;
-    padding: 1rem;
+    padding: 1.1rem 1rem;
     background: var(--bg-card);
     border: 1px solid var(--border-default);
     border-radius: var(--radius-lg);
+    transition: var(--transition-fast);
+}
+
+.eco-stat:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
 .eco-stat .stat-value {
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.5rem;
     color: var(--primary);
 }
@@ -2408,66 +2507,103 @@ select.form-input {
     color: var(--text-muted);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .overlap-section {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     .overlap-img {
-        min-height: 300px;
-    }
-    .overlap-text {
-        padding: 2rem 1.5rem;
+        height: 320px;
     }
 }
 
-/* ===== FULL BG CTA ===== */
-.fullbg-cta {
-    position: relative;
-    padding: 6rem 2rem;
-    min-height: 420px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* ===== SHOWROOM CTA CARD (Home 2) ===== */
+.showroom-cta-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-3xl);
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    align-items: stretch;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+    min-height: 400px;
 }
 
-.fullbg-cta-bg {
-    position: absolute;
-    inset: 0;
+.showroom-cta-card:hover {
+    box-shadow: var(--shadow-xl);
+    border-color: rgba(139, 105, 20, 0.4);
 }
 
-.fullbg-cta-bg img {
+.showroom-cta-img {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-height: 360px;
+}
+
+.showroom-cta-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
 }
 
-.fullbg-cta-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
+.showroom-cta-card:hover .showroom-cta-img img {
+    transform: scale(1.04);
 }
 
-.fullbg-cta-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 560px;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: var(--radius-2xl);
-    padding: 3rem;
+.showroom-cta-content {
+    padding: clamp(2rem, 4.5vw, 3.75rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
-.fullbg-cta-content h2 {
-    color: #fff;
+.showroom-cta-content .section-label {
     margin-bottom: 0.75rem;
 }
 
-.fullbg-cta-content p {
-    color: rgba(255,255,255,0.8);
+.showroom-cta-content h2 {
+    color: var(--text-heading);
+    font-size: clamp(1.75rem, 2.8vw, 2.35rem);
+    margin-bottom: 0.85rem;
+}
+
+.showroom-cta-content p {
+    color: var(--text-body);
+    font-size: 0.975rem;
+    line-height: 1.7;
     margin-bottom: 2rem;
+    max-width: 480px;
+}
+
+.showroom-cta-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+[dir="rtl"] .showroom-cta-content {
+    text-align: right;
+    align-items: flex-start;
+}
+
+@media (max-width: 860px) {
+    .showroom-cta-card {
+        grid-template-columns: 1fr;
+    }
+    .showroom-cta-img {
+        height: 260px;
+        min-height: auto;
+    }
+    .showroom-cta-content {
+        padding: 2rem 1.5rem;
+    }
 }
 
 /* ===== CLIENT LOGOS ===== */
@@ -2611,7 +2747,7 @@ select.form-input {
         margin-bottom: 2rem;
         padding: 0 0.5rem;
     }
-    .container { padding: 0 1rem; }
+    .container { padding: 0 clamp(1.25rem, 4vw, 2rem); }
     .btn-lg {
         width: 100%;
         justify-content: center;
@@ -2779,7 +2915,7 @@ select.form-input {
     background: #fff;
     color: var(--primary);
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2997,18 +3133,60 @@ select.form-input {
 }
 
 .quote-author {
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: left;
+}
+
+.quote-avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(139, 105, 20, 0.5);
+    background: var(--bg-card);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.quote-author:hover .quote-avatar {
+    transform: scale(1.06);
+    border-color: var(--primary);
+}
+
+.quote-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.quote-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+[dir="rtl"] .quote-author {
+    text-align: right;
 }
 
 .quote-author .name {
     font-family: var(--font-heading);
     font-weight: 600;
+    font-size: 1.05rem;
     color: var(--text-heading);
+    line-height: 1.25;
 }
 
 .quote-author .role {
     font-size: 0.8125rem;
     color: var(--text-muted);
+    line-height: 1.3;
+    margin-top: 0.2rem;
 }
 
 /* ===== BULK ORDER FORM ===== */
@@ -3237,7 +3415,7 @@ select.form-input {
 .luxury-cta-title {
     color: #FFFFFF !important;
     font-size: clamp(2rem, 4vw, 3.1rem);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1.1rem;
     text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);

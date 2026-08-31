@@ -12,21 +12,46 @@
 <div id="main-nav"></div>
 
 <!-- ====== 1. SPLIT HERO ====== -->
-<section class="hero-split">
-    <div class="hero-split-text">
-        <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Premium Collection</div>
-        <h1>Elevate Your Outdoor Living Experience</h1>
-        <p>Bespoke outdoor furniture designed by artisans, crafted from the finest materials, and built to create spaces that inspire connection, relaxation, and celebration.</p>
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-            <a href="products.html" class="btn btn-primary btn-lg">Explore Premium</a>
-            <a href="bulk-orders.html" class="btn btn-outline btn-lg">Custom Orders</a>
-        </div>
-    </div>
-    <div class="hero-split-img">
-        <img src="assets/images/hero_split_home2.jpg" alt="Luxury rooftop terrace with modern outdoor dining furniture at sunset">
-        <div class="hero-split-badge">
-            <div class="badge-number">12+</div>
-            <div class="badge-label">Years of<br>Craftsmanship</div>
+<section class="hero-split-section">
+    <div class="container">
+        <div class="hero-split">
+            <div class="hero-split-text">
+                <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Premium Collection</div>
+                <h1>Elevate Your Outdoor Living Experience</h1>
+                <p>Bespoke outdoor furniture designed by artisans, crafted from the finest materials, and built to create spaces that inspire connection, relaxation, and celebration.</p>
+                <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                    <a href="products.html" class="btn btn-primary btn-lg">Explore Premium</a>
+                    <a href="bulk-orders.html" class="btn btn-outline btn-lg">Custom Orders</a>
+                </div>
+            </div>
+            <div class="hero-split-img-wrap">
+                <div class="hero-split-slider" id="heroSplitSlider">
+                    <div class="hero-split-slides">
+                        <div class="hero-split-slide active">
+                            <img src="assets/images/hero_split_home2.jpg" alt="Luxury rooftop terrace with modern outdoor dining furniture at sunset">
+                        </div>
+                        <div class="hero-split-slide">
+                            <img src="assets/images/gallery_1.jpg" alt="Mediterranean villa patio with teak dining set under pergola">
+                        </div>
+                        <div class="hero-split-slide">
+                            <img src="assets/images/hero_slide_2.jpg" alt="Resort poolside cabana with premium rattan loungers">
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="hero-split-badge">
+                        <div class="badge-number">12+</div>
+                        <div class="badge-label">Years of<br>Craftsmanship</div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation Dots Below Image -->
+                <div class="hero-split-dots">
+                    <button class="hero-split-dot active" aria-label="Slide 1"></button>
+                    <button class="hero-split-dot" aria-label="Slide 2"></button>
+                    <button class="hero-split-dot" aria-label="Slide 3"></button>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -103,7 +128,7 @@
         </div>
         <div class="material-panel active" id="mat-teak">
             <div class="material-detail">
-                <div class="material-detail-img"><img src="assets/images/material_teak.svg" alt="Teak wood grain texture"></div>
+                <div class="material-detail-img"><img src="assets/images/material_teak.jpg" alt="Teak wood grain texture"></div>
                 <div>
                     <h3>Teak Wood</h3>
                     <p style="margin-top:0.5rem;">Teak is the gold standard for outdoor furniture. Its natural oils make it incredibly resistant to moisture, insects, and rot. Over time, teak develops a beautiful silver-grey patina that adds character.</p>
@@ -119,7 +144,7 @@
         </div>
         <div class="material-panel" id="mat-aluminum">
             <div class="material-detail">
-                <div class="material-detail-img"><img src="assets/images/material_aluminum.svg" alt="Brushed aluminum texture"></div>
+                <div class="material-detail-img"><img src="assets/images/material_aluminum.jpg" alt="Brushed aluminum texture"></div>
                 <div>
                     <h3>Aluminum</h3>
                     <p style="margin-top:0.5rem;">Lightweight, rust-proof, and remarkably versatile. Powder-coated aluminum requires virtually zero maintenance and comes in a wide range of finishes and colors.</p>
@@ -135,7 +160,7 @@
         </div>
         <div class="material-panel" id="mat-rattan">
             <div class="material-detail">
-                <div class="material-detail-img"><img src="assets/images/material_rattan.svg" alt="Woven rattan texture"></div>
+                <div class="material-detail-img"><img src="assets/images/material_rattan.jpg" alt="Woven rattan texture"></div>
                 <div>
                     <h3>Rattan</h3>
                     <p style="margin-top:0.5rem;">Synthetic PE rattan combines the warm, organic look of natural wicker with weather-proof resilience. UV-stabilized to prevent fading and cracking in harsh sunlight.</p>
@@ -151,7 +176,7 @@
         </div>
         <div class="material-panel" id="mat-iron">
             <div class="material-detail">
-                <div class="material-detail-img"><img src="assets/images/material_wrought_iron.svg" alt="Wrought iron detail"></div>
+                <div class="material-detail-img"><img src="assets/images/material_wrought_iron.jpg" alt="Wrought iron detail"></div>
                 <div>
                     <h3>Wrought Iron</h3>
                     <p style="margin-top:0.5rem;">The ultimate in strength and elegance. Wrought iron furniture features intricate scrollwork and a timeless aesthetic that anchors any outdoor space with gravitas.</p>
@@ -177,11 +202,11 @@
             <p>A curated look at stunning setups and spaces created with our furniture.</p>
         </div>
         <div class="bento-grid animate-on-scroll">
-            <div class="bento-item large"><img src="assets/images/bento_1.svg" alt="Living room outdoor setup"></div>
-            <div class="bento-item"><img src="assets/images/bento_2.svg" alt="Garden view"></div>
-            <div class="bento-item"><img src="assets/images/bento_3.svg" alt="Dining area"></div>
-            <div class="bento-item"><img src="assets/images/bento_4.svg" alt="Relaxation zone"></div>
-            <div class="bento-item"><img src="assets/images/bento_5.svg" alt="Night patio"></div>
+            <div class="bento-item large"><img src="assets/images/bento_1.jpg" alt="Living room outdoor pergola setup"></div>
+            <div class="bento-item"><img src="assets/images/bento_2.jpg" alt="Garden view with teak bench"></div>
+            <div class="bento-item"><img src="assets/images/bento_3.jpg" alt="Al fresco dining party setup"></div>
+            <div class="bento-item"><img src="assets/images/bento_4.jpg" alt="Poolside relaxation sun loungers"></div>
+            <div class="bento-item"><img src="assets/images/bento_5.jpg" alt="Night patio with fire pit and bistro lights"></div>
         </div>
     </div>
 </section>
@@ -238,95 +263,88 @@
     </div>
     <div class="hscroll-wrap">
         <div class="hscroll-track">
-            <div class="premium-hscroll-card"><img src="assets/images/premium_1.svg" alt="Signature Sofa Set"><div class="premium-hscroll-info"><h3>Signature Teak Sofa Set</h3><p>3-seater with deep cushions</p><span class="price">₹1,25,000</span></div></div>
-            <div class="premium-hscroll-card"><img src="assets/images/premium_2.svg" alt="Executive Dining"><div class="premium-hscroll-info"><h3>Executive 8-Seater Dining</h3><p>Aluminum & glass extendable</p><span class="price">₹1,85,000</span></div></div>
-            <div class="premium-hscroll-card"><img src="assets/images/premium_3.svg" alt="Resort Daybed"><div class="premium-hscroll-info"><h3>Resort Daybed</h3><p>Rattan canopy with drapes</p><span class="price">₹95,000</span></div></div>
+            <div class="premium-hscroll-card"><img src="assets/images/premium_1.jpg" alt="Signature Teak Sofa Set"><div class="premium-hscroll-info"><h3>Signature Teak Sofa Set</h3><p>3-seater with deep cushions</p><span class="price">₹1,25,000</span></div></div>
+            <div class="premium-hscroll-card"><img src="assets/images/premium_2.jpg" alt="Executive 8-Seater Dining"><div class="premium-hscroll-info"><h3>Executive 8-Seater Dining</h3><p>Aluminum & glass extendable</p><span class="price">₹1,85,000</span></div></div>
+            <div class="premium-hscroll-card"><img src="assets/images/premium_3.jpg" alt="Resort Daybed"><div class="premium-hscroll-info"><h3>Resort Daybed</h3><p>Rattan canopy with drapes</p><span class="price">₹95,000</span></div></div>
         </div>
     </div>
 </section>
 
-<!-- ====== 8. CLIENT SHOWCASE (Logo Ticker + Quote) ====== -->
+<!-- ====== 8. CLIENT SHOWCASE (Quote) ====== -->
 <section class="section bg-surface">
     <div class="container">
         <div class="section-header animate-on-scroll">
             <div class="section-label" style="justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Trusted By</div>
             <h2>Our Clients</h2>
         </div>
-    </div>
-    <div class="logo-ticker">
-        <div class="logo-ticker-track">
-            <span class="logo-ticker-item">Taj Hotels</span>
-            <span class="logo-ticker-item">ITC Resorts</span>
-            <span class="logo-ticker-item">Oberoi Group</span>
-            <span class="logo-ticker-item">Zuri Hospitality</span>
-            <span class="logo-ticker-item">WeWork</span>
-            <span class="logo-ticker-item">Evolve Back</span>
-            <span class="logo-ticker-item">SaffronStays</span>
-            <span class="logo-ticker-item">The Leela</span>
-            <span class="logo-ticker-item">Taj Hotels</span>
-            <span class="logo-ticker-item">ITC Resorts</span>
-            <span class="logo-ticker-item">Oberoi Group</span>
-            <span class="logo-ticker-item">Zuri Hospitality</span>
-            <span class="logo-ticker-item">WeWork</span>
-            <span class="logo-ticker-item">Evolve Back</span>
-            <span class="logo-ticker-item">SaffronStays</span>
-            <span class="logo-ticker-item">The Leela</span>
-        </div>
-    </div>
-    <div class="container">
         <div class="quote-block animate-on-scroll">
             <blockquote>"Terrace & Co. didn't just furnish our resort — they created outdoor experiences. Every guest compliments the seating areas. The quality is resort-grade and the design team understood our vision perfectly."</blockquote>
             <div class="quote-author">
-                <div class="name">Vikram Malhotra</div>
-                <div class="role">General Manager, Zuri Resort & Spa</div>
+                <div class="quote-avatar">
+                    <img src="assets/images/client_vikram.svg" alt="Vikram Malhotra">
+                </div>
+                <div class="quote-author-info">
+                    <div class="name">Vikram Malhotra</div>
+                    <div class="role">General Manager, Zuri Resort & Spa</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ====== 9. SUSTAINABILITY COMMITMENT ====== -->
-<section class="overlap-section animate-on-scroll">
-    <div class="overlap-img">
-        <img src="assets/images/sustainability.svg" alt="Sustainable forestry and eco-friendly outdoor furniture production">
-    </div>
-    <div class="overlap-text">
-        <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-4 7.5-7 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Our Commitment</div>
-        <h2>Built With the Planet in Mind</h2>
-        <p>Every piece of Terrace & Co. furniture is a statement of responsible craftsmanship. From sustainably harvested teak to recycled aluminum, we ensure our environmental footprint remains as light as possible.</p>
-        <div class="eco-stats">
-            <div class="eco-stat">
-                <div class="stat-value" data-count="100" data-suffix="%">0</div>
-                <div class="stat-label">FSC-Certified Teak</div>
+<section class="section">
+    <div class="container">
+        <div class="overlap-section animate-on-scroll">
+            <div class="overlap-img">
+                <img src="assets/images/sustainability.jpg" alt="Sustainable forestry and eco-friendly outdoor furniture production">
             </div>
-            <div class="eco-stat">
-                <div class="stat-value" data-count="80" data-suffix="%">0</div>
-                <div class="stat-label">Recycled Aluminum</div>
-            </div>
-            <div class="eco-stat">
-                <div class="stat-value" data-count="0" data-prefix="" data-suffix="">Zero</div>
-                <div class="stat-label">Plastic Packaging</div>
-            </div>
-            <div class="eco-stat">
-                <div class="stat-value" data-count="5000" data-suffix="+">0</div>
-                <div class="stat-label">Trees Planted</div>
+            <div class="overlap-text">
+                <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 17 3.5 19 2c1 2 2 4.5 1 8-1.5 5.5-4 7.5-7 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg> Our Commitment</div>
+                <h2>Built With the Planet in Mind</h2>
+                <p>Every piece of Terrace & Co. furniture is a statement of responsible craftsmanship. From sustainably harvested teak to recycled aluminum, we ensure our environmental footprint remains as light as possible.</p>
+                <div class="eco-stats">
+                    <div class="eco-stat">
+                        <div class="stat-value" data-count="100" data-suffix="%">0</div>
+                        <div class="stat-label">FSC-Certified Teak</div>
+                    </div>
+                    <div class="eco-stat">
+                        <div class="stat-value" data-count="80" data-suffix="%">0</div>
+                        <div class="stat-label">Recycled Aluminum</div>
+                    </div>
+                    <div class="eco-stat">
+                        <div class="stat-value" data-count="0" data-prefix="" data-suffix="">Zero</div>
+                        <div class="stat-label">Plastic Packaging</div>
+                    </div>
+                    <div class="eco-stat">
+                        <div class="stat-value" data-count="5000" data-suffix="+">0</div>
+                        <div class="stat-label">Trees Planted</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ====== 10. CONTACT CTA ====== -->
-<div class="fullbg-cta animate-on-scroll">
-    <div class="fullbg-cta-bg"><img src="assets/images/fullbg_cta.svg" alt="Outdoor furniture showroom backdrop"></div>
-    <div class="fullbg-cta-overlay"></div>
-    <div class="fullbg-cta-content">
-        <h2>Visit Our Showroom</h2>
-        <p>Experience our furniture in person. Book a private consultation and explore our full range of outdoor collections.</p>
-        <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
-            <a href="contact.html" class="btn btn-primary btn-lg">Book a Visit</a>
-            <a href="bulk-orders.html" class="btn btn-ghost btn-lg" style="border-color:rgba(255,255,255,0.3);color:#fff;">Custom Orders</a>
+<section class="section" style="padding-top: 1rem; padding-bottom: 5rem;">
+    <div class="container">
+        <div class="showroom-cta-card animate-on-scroll">
+            <div class="showroom-cta-img">
+                <img src="assets/images/fullbg_cta.jpg" alt="Terrace & Co. luxury outdoor furniture showroom">
+            </div>
+            <div class="showroom-cta-content">
+                <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Experience In Person</div>
+                <h2>Visit Our Showroom</h2>
+                <p>Experience our furniture in person. Book a private consultation with our outdoor design team and explore our full range of handcrafted collections.</p>
+                <div class="showroom-cta-actions">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Book a Visit</a>
+                    <a href="bulk-orders.html" class="btn btn-outline btn-lg">Custom Orders</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Scroll to Top -->
 <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
