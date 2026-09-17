@@ -5028,6 +5028,22 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     transform: scale(1.1) !important;
 }
 
+/* --- Number Input Controls (Always Visible Without Hover) --- */
+input[type="number"] {
+    color-scheme: light;
+}
+
+.dark input[type="number"],
+.dark input[type="number"].form-input {
+    color-scheme: dark;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1 !important;
+    cursor: pointer;
+}
+
 /* --- Select Dropdown Controls --- */
 select.form-input {
     appearance: none;
