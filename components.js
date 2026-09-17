@@ -63,6 +63,7 @@ function toggleDir() {
     document.querySelectorAll('.dir-label').forEach(el => {
         el.textContent = isRTL ? 'LTR' : 'RTL';
     });
+    window.dispatchEvent(new CustomEvent('patio:dirchange'));
 }
 
 function getLogoSVG(size = 38) {
@@ -576,6 +577,117 @@ window.addEventListener('scroll', function() {
     }
 }, { passive: true });
 
+/* ─── TESTIMONIAL CAROUSEL ───────────────────────────────── */
+function initTestimonialCarousel() {
+    const container = document.querySelector('.testimonial-carousel-container');
+    if (!container) return;
+
+    const track = document.getElementById('testimonial-track');
+    const cards = track ? track.querySelectorAll('.testimonial-card') : [];
+    const prevBtn = document.getElementById('testimonial-prev');
+    const nextBtn = document.getElementById('testimonial-next');
+    const dots = document.querySelectorAll('.testimonial-dot');
+
+    if (!cards.length || !track) return;
+
+    let current = 0;
+    let timer = null;
+    const interval = 6000;
+
+    function isRTL() {
+        return document.documentElement.getAttribute('dir') === 'rtl';
+    }
+
+    function goToSlide(index) {
+        if (index < 0) index = cards.length - 1;
+        if (index >= cards.length) index = 0;
+        current = index;
+
+        const offset = isRTL() ? (current * 100) : -(current * 100);
+        track.style.transform = `translateX(${offset}%)`;
+
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === current);
+        });
+    }
+
+    function next() {
+        goToSlide(current + 1);
+    }
+
+    function prev() {
+        goToSlide(current - 1);
+    }
+
+    function startTimer() {
+        stopTimer();
+        timer = setInterval(next, interval);
+    }
+
+    function stopTimer() {
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
+        }
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            next();
+            startTimer();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            prev();
+            startTimer();
+        });
+    }
+
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            goToSlide(idx);
+            startTimer();
+        });
+    });
+
+    container.addEventListener('mouseenter', stopTimer);
+    container.addEventListener('mouseleave', startTimer);
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    container.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        const diffX = touchStartX - touchEndX;
+        const diffY = touchStartY - touchEndY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+            if (isRTL()) {
+                if (diffX < 0) next();
+                else prev();
+            } else {
+                if (diffX > 0) next();
+                else prev();
+            }
+            startTimer();
+        }
+    }, { passive: true });
+
+    window.addEventListener('patio:dirchange', () => goToSlide(current));
+
+    startTimer();
+}
+
 /* ─── INIT ON DOM READY ─────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function() {
     injectNav();
@@ -586,4 +698,5 @@ document.addEventListener('DOMContentLoaded', function() {
     initHeroSplitSlider();
     initBASlider();
     initScrollToTop();
+    initTestimonialCarousel();
 });
